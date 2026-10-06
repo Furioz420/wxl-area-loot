@@ -1,0 +1,29 @@
+# Integration source snapshot - 2026-10-04
+
+This repository contains the `wxl-area-loot` extension maintained under Furioz420.
+This update is a source snapshot, not an installable client release.
+
+## Provenance
+
+Source: `working-tree-uncommitted` from the local WXL integration workspace. Existing repository
+licenses, attribution, packaging, and independently maintained files are retained.
+Uncommitted-source snapshots are identified explicitly and have not been validated
+as standalone builds. No game client, database dump, or server credentials are included.
+
+## Build and installation requirements
+
+Build this extension inside a compatible WXL core with the matching extension APIs.
+The integration workspace can contain API changes that are not yet in the public
+core repository. Existing workflows that select a moving core branch are not proof
+of compatibility. Standalone CI and release packaging remain a separate gate:
+confirm the required core APIs, pin a compatible public core revision, build, and
+validate the matching client installation before publishing a binary release.
+
+This PR does not deploy anything to the game client. Accepted in-game behavior is
+evidence for the integrated workspace, not for a separately built DLL from this repo.
+
+The server module and FrameNew AreaLoot Lua are separate dependencies. This repository alone is not a complete area-loot installation.
+
+## Source build verification (2026-10-06)
+
+The source in this PR built as a Release/Win32 extension against Furioz420/wxl-core `853217d7b0441e95eed2ba092f291dbd6626e6c9` with Visual Studio 2026 CMake tooling. The target DLL linked successfully. This verifies source compatibility with that exact core commit; it does not verify a standalone binary release or client gameplay.
